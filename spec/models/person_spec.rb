@@ -5,7 +5,7 @@ describe Person do
   describe '#valid' do
     context 'when email is valid' do
       before do
-        @person = Person.create(email: 'ssapra@uchicago.edu')
+        @person = build(:person)
       end
 
       it 'is valid' do
@@ -17,7 +17,8 @@ describe Person do
   describe '#invalid' do
     context 'when email is empty' do
       before do
-        @person = Person.create(email: '')
+        @person = build(:person, email: '')
+        @person.save
       end
 
       it 'is invalid' do
@@ -31,7 +32,8 @@ describe Person do
 
     context 'when the email is not formatted correctly' do
       before do
-        @person = Person.create(email: 'nonense@google')
+        @person = build(:person, email: 'nonsense@google')
+        @person.save
       end
 
       it 'is invalid' do

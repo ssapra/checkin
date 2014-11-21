@@ -8,8 +8,6 @@ class Person < ActiveRecord::Base
   def is_a_valid_email?
     if !(email =~ VALID_EMAIL_REGEX)
       errors.add(:email, "invalid email address")
-    elsif email.empty?
-      errors.add(:email, "blank email address")
     end
   end
 end
