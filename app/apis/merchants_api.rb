@@ -4,7 +4,7 @@ class MerchantsApi < Grape::API
     optional :ids, type: Array, desc: 'Array of merchant ids'
   end
   get do
-    merchants = params[:ids] ? Merchant.where(id: params[:ids]) : Merchant.all
+    merchants = Merchant.all
     represent merchants, with: MerchantRepresenter
   end
 end
