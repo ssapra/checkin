@@ -3,7 +3,7 @@ defaults: &defaults
   adapter: postgresql
   username: checkin
   password:
-  database: checkin_developement
+  database: checkin_development
 
 production:
   <<: *defaults
