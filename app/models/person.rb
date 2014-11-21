@@ -3,6 +3,9 @@ class Person < ActiveRecord::Base
 
   validate :is_a_valid_email?
 
+  has_many :checkins
+  has_many :merchants, through: :checkins
+
   private
 
   def is_a_valid_email?
