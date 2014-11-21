@@ -1,0 +1,18 @@
+defaults: &defaults
+  encoding: unicode
+  adapter: postgresql
+  username: checkin
+  password:
+  database: checkin_developement
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
