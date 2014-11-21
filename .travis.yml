@@ -2,7 +2,13 @@ language: ruby
 bundler_args: --without development
 rvm:
   - 2.0.0-p247
-script: "bundle exec rspec"
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
 gemfile:
   - Gemfile
 branches:
