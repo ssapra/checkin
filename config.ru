@@ -11,7 +11,7 @@ require './app'
 # end
 #
 # use Honeybadger::Rack::ErrorNotifier
-# use Napa::Middleware::Logger
+use Napa::Middleware::Logger
 
 use Napa::Middleware::AppMonitor
 use Napa::Middleware::Authentication

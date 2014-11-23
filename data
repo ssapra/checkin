@@ -1,0 +1,4288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NONE,NOARCHIVE" />
+  <title>NameError at &#x2F;checkins</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    table {
+        border:1px solid #ccc; border-collapse: collapse; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+        padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+        font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%;}
+    table td.code div { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td {
+        font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { margin-bottom:1em; }
+    div.context { margin: 10px 0; }
+    div.context ol {
+        padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li {
+        font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { float: right; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #summary ul#quicklinks { list-style-type: none; margin-bottom: 2em; }
+    #summary ul#quicklinks li { float: left; padding: 0 1em; }
+    #summary ul#quicklinks>li+li { border-left: 1px #666 solid; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+  </style>
+  <script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon;
+        // Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\\-");
+        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    //-->
+  </script>
+</head>
+<body>
+
+<div id="summary">
+  <h1>NameError at &#x2F;checkins</h1>
+  <h2>undefined local variable or method `person&#x27; for CheckinRepresenter:Class</h2>
+  <table><tr>
+    <th>Ruby</th>
+    <td>
+
+      <code>&#x2F;Users&#x2F;ssapra&#x2F;Copy&#x2F;Shaan&#x2F;dev&#x2F;checkin&#x2F;app&#x2F;representers&#x2F;checkin_representer.rb</code>: in <code>&lt;class:CheckinRepresenter&gt;</code>, line 2
+
+    </td>
+  </tr><tr>
+    <th>Web</th>
+    <td><code>POST localhost&#x2F;checkins</code></td>
+  </tr></table>
+
+  <h3>Jump to:</h3>
+  <ul id="quicklinks">
+    <li><a href="#get-info">GET</a></li>
+    <li><a href="#post-info">POST</a></li>
+    <li><a href="#cookie-info">Cookies</a></li>
+    <li><a href="#env-info">ENV</a></li>
+  </ul>
+</div>
+
+<div id="traceback">
+  <h2>Traceback <span>(innermost first)</span></h2>
+  <ul class="traceback">
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;Copy&#x2F;Shaan&#x2F;dev&#x2F;checkin&#x2F;app&#x2F;representers&#x2F;checkin_representer.rb</code>: in <code>&lt;class:CheckinRepresenter&gt;</code>
+
+          
+          <div class="context" id="c70122333424140">
+              
+              <ol start="1" class="pre-context" id="pre70122333424140">
+                
+                <li onclick="toggle('pre70122333424140', 'post70122333424140')">class CheckinRepresenter &lt; Napa::Representer
+</li>
+                
+              </ol>
+              
+
+            <ol start="2" class="context-line">
+              <li onclick="toggle('pre70122333424140', 'post70122333424140')">  property :person_id, as: person.id, type: String<span>...</span></li></ol>
+
+              
+              <ol start='3' class="post-context" id="post70122333424140">
+                
+                <li onclick="toggle('pre70122333424140', 'post70122333424140')">  property :created_at, type: String
+</li>
+                
+                <li onclick="toggle('pre70122333424140', 'post70122333424140')">  property :id, type: String
+</li>
+                
+                <li onclick="toggle('pre70122333424140', 'post70122333424140')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;Copy&#x2F;Shaan&#x2F;dev&#x2F;checkin&#x2F;app&#x2F;representers&#x2F;checkin_representer.rb</code>: in <code>&lt;top (required)&gt;</code>
+
+          
+          <div class="context" id="c70122333421680">
+              
+              <ol start="1" class="pre-context" id="pre70122333421680">
+                
+              </ol>
+              
+
+            <ol start="1" class="context-line">
+              <li onclick="toggle('pre70122333421680', 'post70122333421680')">class CheckinRepresenter &lt; Napa::Representer<span>...</span></li></ol>
+
+              
+              <ol start='2' class="post-context" id="post70122333421680">
+                
+                <li onclick="toggle('pre70122333421680', 'post70122333421680')">  property :person_id, as: person.id, type: String
+</li>
+                
+                <li onclick="toggle('pre70122333421680', 'post70122333421680')">  property :created_at, type: String
+</li>
+                
+                <li onclick="toggle('pre70122333421680', 'post70122333421680')">  property :id, type: String
+</li>
+                
+                <li onclick="toggle('pre70122333421680', 'post70122333421680')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>load</code>
+
+          
+          <div class="context" id="c70122333444040">
+              
+              <ol start="417" class="pre-context" id="pre70122333444040">
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">    def load_file(path, const_paths = loadable_constants_for_path(path))
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      log_call path, const_paths
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      const_paths = [const_paths].compact unless const_paths.is_a? Array
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      parent_paths = const_paths.collect { |const_path| const_path[&#x2F;.*(?=::)&#x2F;] || :Object }
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      result = nil
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      newly_defined_paths = new_constants_in(*parent_paths) do
+</li>
+                
+              </ol>
+              
+
+            <ol start="424" class="context-line">
+              <li onclick="toggle('pre70122333444040', 'post70122333444040')">        result = Kernel.load path<span>...</span></li></ol>
+
+              
+              <ol start='425' class="post-context" id="post70122333444040">
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      end
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      autoloaded_constants.concat newly_defined_paths unless load_once_path?(path)
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      autoloaded_constants.uniq!
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      log &quot;loading #{path} defined #{newly_defined_paths * &#x27;, &#x27;}&quot; unless newly_defined_paths.empty?
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">      result
+</li>
+                
+                <li onclick="toggle('pre70122333444040', 'post70122333444040')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>block in load_file</code>
+
+          
+          <div class="context" id="c70122333476520">
+              
+              <ol start="417" class="pre-context" id="pre70122333476520">
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">    def load_file(path, const_paths = loadable_constants_for_path(path))
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      log_call path, const_paths
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      const_paths = [const_paths].compact unless const_paths.is_a? Array
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      parent_paths = const_paths.collect { |const_path| const_path[&#x2F;.*(?=::)&#x2F;] || :Object }
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      result = nil
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      newly_defined_paths = new_constants_in(*parent_paths) do
+</li>
+                
+              </ol>
+              
+
+            <ol start="424" class="context-line">
+              <li onclick="toggle('pre70122333476520', 'post70122333476520')">        result = Kernel.load path<span>...</span></li></ol>
+
+              
+              <ol start='425' class="post-context" id="post70122333476520">
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      end
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      autoloaded_constants.concat newly_defined_paths unless load_once_path?(path)
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      autoloaded_constants.uniq!
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      log &quot;loading #{path} defined #{newly_defined_paths * &#x27;, &#x27;}&quot; unless newly_defined_paths.empty?
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">      result
+</li>
+                
+                <li onclick="toggle('pre70122333476520', 'post70122333476520')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>new_constants_in</code>
+
+          
+          <div class="context" id="c70122333508860">
+              
+              <ol start="609" class="pre-context" id="pre70122333508860">
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">    def new_constants_in(*descs)
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">      log_call(*descs)
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">      constant_watch_stack.watch_namespaces(descs)
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">      aborting = true
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">      begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="616" class="context-line">
+              <li onclick="toggle('pre70122333508860', 'post70122333508860')">        yield # Now yield to the code that is to define new constants.<span>...</span></li></ol>
+
+              
+              <ol start='617' class="post-context" id="post70122333508860">
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">        aborting = false
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">      ensure
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">        new_constants = constant_watch_stack.new_constants
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">        log &quot;New constants: #{new_constants * &#x27;, &#x27;}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">        return new_constants unless aborting
+</li>
+                
+                <li onclick="toggle('pre70122333508860', 'post70122333508860')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>load_file</code>
+
+          
+          <div class="context" id="c70122333539960">
+              
+              <ol start="416" class="pre-context" id="pre70122333539960">
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">    # +loadable_constants_for_path+ for more details.
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">    def load_file(path, const_paths = loadable_constants_for_path(path))
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      log_call path, const_paths
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      const_paths = [const_paths].compact unless const_paths.is_a? Array
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      parent_paths = const_paths.collect { |const_path| const_path[&#x2F;.*(?=::)&#x2F;] || :Object }
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      result = nil
+</li>
+                
+              </ol>
+              
+
+            <ol start="423" class="context-line">
+              <li onclick="toggle('pre70122333539960', 'post70122333539960')">      newly_defined_paths = new_constants_in(*parent_paths) do<span>...</span></li></ol>
+
+              
+              <ol start='424' class="post-context" id="post70122333539960">
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">        result = Kernel.load path
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      end
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      autoloaded_constants.concat newly_defined_paths unless load_once_path?(path)
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      autoloaded_constants.uniq!
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      log &quot;loading #{path} defined #{newly_defined_paths * &#x27;, &#x27;}&quot; unless newly_defined_paths.empty?
+</li>
+                
+                <li onclick="toggle('pre70122333539960', 'post70122333539960')">      result
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>require_or_load</code>
+
+          
+          <div class="context" id="c70122333572360">
+              
+              <ol start="317" class="pre-context" id="pre70122333572360">
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          # Enable warnings if this file has not been loaded before and
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          # warnings_on_first_load is set.
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          load_args = [&quot;#{file_name}.rb&quot;]
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          load_args &lt;&lt; const_path unless const_path.nil?
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          if !warnings_on_first_load or history.include?(expanded)
+</li>
+                
+              </ol>
+              
+
+            <ol start="324" class="context-line">
+              <li onclick="toggle('pre70122333572360', 'post70122333572360')">            result = load_file(*load_args)<span>...</span></li></ol>
+
+              
+              <ol start='325' class="post-context" id="post70122333572360">
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          else
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">            enable_warnings { result = load_file(*load_args) }
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          end
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">        else
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          log &quot;requiring #{file_name}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">          result = require file_name
+</li>
+                
+                <li onclick="toggle('pre70122333572360', 'post70122333572360')">        end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>load_missing_constant</code>
+
+          
+          <div class="context" id="c70122333604880">
+              
+              <ol start="456" class="pre-context" id="pre70122333604880">
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">      if file_path
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        expanded = File.expand_path(file_path)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        expanded.sub!(&#x2F;\.rb\z&#x2F;, &#x27;&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        if loaded.include?(expanded)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">          raise &quot;Circular dependency detected while autoloading constant #{qualified_name}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        else
+</li>
+                
+              </ol>
+              
+
+            <ol start="463" class="context-line">
+              <li onclick="toggle('pre70122333604880', 'post70122333604880')">          require_or_load(expanded, qualified_name)<span>...</span></li></ol>
+
+              
+              <ol start='464' class="post-context" id="post70122333604880">
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">          raise LoadError, &quot;Unable to autoload constant #{qualified_name}, expected #{file_path} to define it&quot; unless from_mod.const_defined?(const_name, false)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">          return from_mod.const_get(const_name)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        end
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">      elsif mod = autoload_module!(from_mod, const_name, qualified_name, path_suffix)
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">        return mod
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">      elsif (parent = from_mod.parent) &amp;&amp; parent != from_mod &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre70122333604880', 'post70122333604880')">            ! from_mod.parents.any? { |p| p.const_defined?(const_name, false) }
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>const_missing</code>
+
+          
+          <div class="context" id="c70122288240580">
+              
+              <ol start="177" class="pre-context" id="pre70122288240580">
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">      def const_missing(const_name)
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        # The interpreter does not pass nesting information, and in the
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        # case of anonymous modules we cannot even make the trade-off of
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        # assuming their name reflects the nesting. Resort to Object as
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        # the only meaningful guess we can make.
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        from_mod = anonymous? ? ::Object : self
+</li>
+                
+              </ol>
+              
+
+            <ol start="184" class="context-line">
+              <li onclick="toggle('pre70122288240580', 'post70122288240580')">        Dependencies.load_missing_constant(from_mod, const_name)<span>...</span></li></ol>
+
+              
+              <ol start='185' class="post-context" id="post70122288240580">
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">      end
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">      def unloadable(const_desc = self)
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">        super(const_desc)
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">      end
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">    end
+</li>
+                
+                <li onclick="toggle('pre70122288240580', 'post70122288240580')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>load_missing_constant</code>
+
+          
+          <div class="context" id="c70122288896020">
+              
+              <ol start="488" class="pre-context" id="pre70122288896020">
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #   module M::N
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #     module S::T
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #       Module.nesting # =&gt; [S::T, M::N]
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #     end
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #   end
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          #
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          # for example.
+</li>
+                
+              </ol>
+              
+
+            <ol start="495" class="context-line">
+              <li onclick="toggle('pre70122288896020', 'post70122288896020')">          return parent.const_missing(const_name)<span>...</span></li></ol>
+
+              
+              <ol start='496' class="post-context" id="post70122288896020">
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">        rescue NameError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">          raise unless e.missing_name? qualified_name_for(parent, const_name)
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">        end
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">      end
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">      name_error = NameError.new(&quot;uninitialized constant #{qualified_name}&quot;, const_name)
+</li>
+                
+                <li onclick="toggle('pre70122288896020', 'post70122288896020')">      name_error.set_backtrace(caller.reject {|l| l.starts_with? __FILE__ })
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activesupport-4.0.12&#x2F;lib&#x2F;active_support&#x2F;dependencies.rb</code>: in <code>const_missing</code>
+
+          
+          <div class="context" id="c70122289399900">
+              
+              <ol start="177" class="pre-context" id="pre70122289399900">
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">      def const_missing(const_name)
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        # The interpreter does not pass nesting information, and in the
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        # case of anonymous modules we cannot even make the trade-off of
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        # assuming their name reflects the nesting. Resort to Object as
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        # the only meaningful guess we can make.
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        from_mod = anonymous? ? ::Object : self
+</li>
+                
+              </ol>
+              
+
+            <ol start="184" class="context-line">
+              <li onclick="toggle('pre70122289399900', 'post70122289399900')">        Dependencies.load_missing_constant(from_mod, const_name)<span>...</span></li></ol>
+
+              
+              <ol start='185' class="post-context" id="post70122289399900">
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">      def unloadable(const_desc = self)
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">        super(const_desc)
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">    end
+</li>
+                
+                <li onclick="toggle('pre70122289399900', 'post70122289399900')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;Copy&#x2F;Shaan&#x2F;dev&#x2F;checkin&#x2F;app&#x2F;apis&#x2F;checkins_api.rb</code>: in <code>block in &lt;class:CheckinsApi&gt;</code>
+
+          
+          <div class="context" id="c70122295524620">
+              
+              <ol start="12" class="pre-context" id="pre70122295524620">
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">      present_error(404, &quot;Could not find merchant with id #{params[:merchant_id]}&quot;)
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">    elsif !person.valid?
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">      Napa::Logger.logger.debug &quot;Invalid email #{params[:email]}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">      present_error(422, &quot;Invalid email #{params[:email]}&quot;)
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">    else
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">      Napa::Logger.logger.debug &quot;Created checkin with person #{person.id} at merchant #{merchant.id}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">      checkin = Checkin.create(merchant_id: merchant.id, person_id: person.id)
+</li>
+                
+              </ol>
+              
+
+            <ol start="19" class="context-line">
+              <li onclick="toggle('pre70122295524620', 'post70122295524620')">      represent checkin, with: CheckinRepresenter<span>...</span></li></ol>
+
+              
+              <ol start='20' class="post-context" id="post70122295524620">
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">    end
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">  end
+</li>
+                
+                <li onclick="toggle('pre70122295524620', 'post70122295524620')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122295467780">
+              
+              <ol start="38" class="pre-context" id="pre70122295467780">
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">      def generate_api_method(method_name, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">        if instance_methods.include?(method_name.to_sym) || instance_methods.include?(method_name.to_s)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">          raise NameError.new(&quot;method #{method_name.inspect} already exists and cannot be used as an unbound method name&quot;)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">        end
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">        define_method(method_name, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">        method = instance_method(method_name)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">        remove_method(method_name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="45" class="context-line">
+              <li onclick="toggle('pre70122295467780', 'post70122295467780')">        proc { |endpoint_instance| method.bind(endpoint_instance).call }<span>...</span></li></ol>
+
+              
+              <ol start='46' class="post-context" id="post70122295467780">
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">      end
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">    end
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">    def initialize(settings, options = {}, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">      require_option(options, :path)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">      require_option(options, :method)
+</li>
+                
+                <li onclick="toggle('pre70122295467780', 'post70122295467780')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>block in generate_api_method</code>
+
+          
+          <div class="context" id="c70122295897400">
+              
+              <ol start="38" class="pre-context" id="pre70122295897400">
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">      def generate_api_method(method_name, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">        if instance_methods.include?(method_name.to_sym) || instance_methods.include?(method_name.to_s)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">          raise NameError.new(&quot;method #{method_name.inspect} already exists and cannot be used as an unbound method name&quot;)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">        end
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">        define_method(method_name, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">        method = instance_method(method_name)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">        remove_method(method_name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="45" class="context-line">
+              <li onclick="toggle('pre70122295897400', 'post70122295897400')">        proc { |endpoint_instance| method.bind(endpoint_instance).call }<span>...</span></li></ol>
+
+              
+              <ol start='46' class="post-context" id="post70122295897400">
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">      end
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">    end
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">    def initialize(settings, options = {}, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">      require_option(options, :path)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">      require_option(options, :method)
+</li>
+                
+                <li onclick="toggle('pre70122295897400', 'post70122295897400')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122299667540">
+              
+              <ol start="213" class="pre-context" id="pre70122299667540">
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      if validation_errors.any?
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">        raise Grape::Exceptions::ValidationErrors, errors: validation_errors
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      end
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      run_filters after_validations
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="220" class="context-line">
+              <li onclick="toggle('pre70122299667540', 'post70122299667540')">      response_text = @block ? @block.call(self) : nil<span>...</span></li></ol>
+
+              
+              <ol start='221' class="post-context" id="post70122299667540">
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      run_filters afters
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      cookies.write(header)
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">      [status, header, [body || response_text]]
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">    end
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">
+</li>
+                
+                <li onclick="toggle('pre70122299667540', 'post70122299667540')">    def build_middleware
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>run</code>
+
+          
+          <div class="context" id="c70122299919300">
+              
+              <ol start="213" class="pre-context" id="pre70122299919300">
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      if validation_errors.any?
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">        raise Grape::Exceptions::ValidationErrors, errors: validation_errors
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      end
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      run_filters after_validations
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="220" class="context-line">
+              <li onclick="toggle('pre70122299919300', 'post70122299919300')">      response_text = @block ? @block.call(self) : nil<span>...</span></li></ol>
+
+              
+              <ol start='221' class="post-context" id="post70122299919300">
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      run_filters afters
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      cookies.write(header)
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">      [status, header, [body || response_text]]
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">    end
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">
+</li>
+                
+                <li onclick="toggle('pre70122299919300', 'post70122299919300')">    def build_middleware
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>block in call!</code>
+
+          
+          <div class="context" id="c70122300035300">
+              
+              <ol start="164" class="pre-context" id="pre70122300035300">
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">      extend helpers
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">      env[&#x27;api.endpoint&#x27;] = self
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">      if options[:app]
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">        options[:app].call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">      else
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">        builder = build_middleware
+</li>
+                
+              </ol>
+              
+
+            <ol start="171" class="context-line">
+              <li onclick="toggle('pre70122300035300', 'post70122300035300')">        builder.run options[:app] || lambda { |arg| run(arg) }<span>...</span></li></ol>
+
+              
+              <ol start='172' class="post-context" id="post70122300035300">
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">        builder.call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">    end
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">    # Return the collection of endpoints within this endpoint.
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">    # This is the case when an Grape::API mounts another Grape::API.
+</li>
+                
+                <li onclick="toggle('pre70122300035300', 'post70122300035300')">    def endpoints
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;base.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300180560">
+              
+              <ol start="17" class="pre-context" id="pre70122300180560">
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">        dup.call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">        before
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre70122300180560', 'post70122300180560')">        @app_response = @app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post70122300180560">
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">        after || @app_response
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      # @abstract
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      # Called before the application is called in the middleware lifecycle.
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      def before
+</li>
+                
+                <li onclick="toggle('pre70122300180560', 'post70122300180560')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;base.rb</code>: in <code>call!</code>
+
+          
+          <div class="context" id="c70122296014300">
+              
+              <ol start="17" class="pre-context" id="pre70122296014300">
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">        dup.call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">        before
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre70122296014300', 'post70122296014300')">        @app_response = @app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post70122296014300">
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">        after || @app_response
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      # @abstract
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      # Called before the application is called in the middleware lifecycle.
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      def before
+</li>
+                
+                <li onclick="toggle('pre70122296014300', 'post70122296014300')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;base.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122289582180">
+              
+              <ol start="11" class="pre-context" id="pre70122289582180">
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      def default_options
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">        {}
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="18" class="context-line">
+              <li onclick="toggle('pre70122289582180', 'post70122289582180')">        dup.call!(env)<span>...</span></li></ol>
+
+              
+              <ol start='19' class="post-context" id="post70122289582180">
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">        before
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">        @app_response = @app.call(@env)
+</li>
+                
+                <li onclick="toggle('pre70122289582180', 'post70122289582180')">        after || @app_response
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;error.rb</code>: in <code>block in call!</code>
+
+          
+          <div class="context" id="c70122286083740">
+              
+              <ol start="20" class="pre-context" id="pre70122286083740">
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">      end
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">        begin
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">          error_response(catch(:error) do
+</li>
+                
+              </ol>
+              
+
+            <ol start="27" class="context-line">
+              <li onclick="toggle('pre70122286083740', 'post70122286083740')">            return @app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='28' class="post-context" id="post70122286083740">
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">          end)
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">        rescue StandardError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">          is_rescuable = rescuable?(e.class)
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">          if e.is_a?(Grape::Exceptions::Base) &amp;&amp; !is_rescuable
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">            handler = lambda { |arg| error_response(arg) }
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">          else
+</li>
+                
+                <li onclick="toggle('pre70122286083740', 'post70122286083740')">            raise unless is_rescuable
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;error.rb</code>: in <code>catch</code>
+
+          
+          <div class="context" id="c70122296517400">
+              
+              <ol start="19" class="pre-context" id="pre70122296517400">
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">        }
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">        begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="26" class="context-line">
+              <li onclick="toggle('pre70122296517400', 'post70122296517400')">          error_response(catch(:error) do<span>...</span></li></ol>
+
+              
+              <ol start='27' class="post-context" id="post70122296517400">
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">            return @app.call(@env)
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">          end)
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">        rescue StandardError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">          is_rescuable = rescuable?(e.class)
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">          if e.is_a?(Grape::Exceptions::Base) &amp;&amp; !is_rescuable
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">            handler = lambda { |arg| error_response(arg) }
+</li>
+                
+                <li onclick="toggle('pre70122296517400', 'post70122296517400')">          else
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;error.rb</code>: in <code>call!</code>
+
+          
+          <div class="context" id="c70122296569580">
+              
+              <ol start="19" class="pre-context" id="pre70122296569580">
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">        }
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">        begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="26" class="context-line">
+              <li onclick="toggle('pre70122296569580', 'post70122296569580')">          error_response(catch(:error) do<span>...</span></li></ol>
+
+              
+              <ol start='27' class="post-context" id="post70122296569580">
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">            return @app.call(@env)
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">          end)
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">        rescue StandardError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">          is_rescuable = rescuable?(e.class)
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">          if e.is_a?(Grape::Exceptions::Base) &amp;&amp; !is_rescuable
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">            handler = lambda { |arg| error_response(arg) }
+</li>
+                
+                <li onclick="toggle('pre70122296569580', 'post70122296569580')">          else
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;middleware&#x2F;base.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122296635620">
+              
+              <ol start="11" class="pre-context" id="pre70122296635620">
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      def default_options
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">        {}
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="18" class="context-line">
+              <li onclick="toggle('pre70122296635620', 'post70122296635620')">        dup.call!(env)<span>...</span></li></ol>
+
+              
+              <ol start='19' class="post-context" id="post70122296635620">
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">        before
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">        @app_response = @app.call(@env)
+</li>
+                
+                <li onclick="toggle('pre70122296635620', 'post70122296635620')">        after || @app_response
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;head.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122296667540">
+              
+              <ol start="4" class="pre-context" id="pre70122296667540">
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">  # Rack::Head returns an empty body for all HEAD requests. It leaves
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">  # all other requests unchanged.
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">  def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">    @app = app
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">  end
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">  def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="11" class="context-line">
+              <li onclick="toggle('pre70122296667540', 'post70122296667540')">    status, headers, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='12' class="post-context" id="post70122296667540">
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">    if env[&quot;REQUEST_METHOD&quot;] == &quot;HEAD&quot;
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">      body.close if body.respond_to? :close
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">      [status, headers, []]
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">    else
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">      [status, headers, body]
+</li>
+                
+                <li onclick="toggle('pre70122296667540', 'post70122296667540')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;builder.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122296680800">
+              
+              <ol start="131" class="pre-context" id="pre70122296680800">
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    def to_app
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">      app = @map ? generate_map(@run, @map) : @run
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">      fail &quot;missing run or map statement&quot; unless app
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">      @use.reverse.inject(app) { |a,e| e[a] }
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    end
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="138" class="context-line">
+              <li onclick="toggle('pre70122296680800', 'post70122296680800')">      to_app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='139' class="post-context" id="post70122296680800">
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    end
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    private
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">    def generate_map(default_app, mapping)
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">      mapped = default_app ? {&#x27;&#x2F;&#x27; =&gt; default_app} : {}
+</li>
+                
+                <li onclick="toggle('pre70122296680800', 'post70122296680800')">      mapping.each { |r,b| mapped[r] = self.class.new(default_app, &amp;b) }
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>call!</code>
+
+          
+          <div class="context" id="c70122296747140">
+              
+              <ol start="165" class="pre-context" id="pre70122296747140">
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">      env[&#x27;api.endpoint&#x27;] = self
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">      if options[:app]
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">        options[:app].call(env)
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">      else
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">        builder = build_middleware
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">        builder.run options[:app] || lambda { |arg| run(arg) }
+</li>
+                
+              </ol>
+              
+
+            <ol start="172" class="context-line">
+              <li onclick="toggle('pre70122296747140', 'post70122296747140')">        builder.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='173' class="post-context" id="post70122296747140">
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">      end
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">    end
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">    # Return the collection of endpoints within this endpoint.
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">    # This is the case when an Grape::API mounts another Grape::API.
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">    def endpoints
+</li>
+                
+                <li onclick="toggle('pre70122296747140', 'post70122296747140')">      if options[:app] &amp;&amp; options[:app].respond_to?(:endpoints)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122296819000">
+              
+              <ol start="153" class="pre-context" id="pre70122296819000">
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      endpoint_options = {}
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      endpoint_options[:version] = &#x2F;#{settings[:version].join(&#x27;|&#x27;)}&#x2F; if settings[:version]
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      endpoint_options.merge!(requirements)
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      Rack::Mount::Strexp.compile(prepared_path, endpoint_options, %w( &#x2F; . ? ), anchor)
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">    end
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="160" class="context-line">
+              <li onclick="toggle('pre70122296819000', 'post70122296819000')">      dup.call!(env)<span>...</span></li></ol>
+
+              
+              <ol start='161' class="post-context" id="post70122296819000">
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">    end
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">    def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      extend helpers
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      env[&#x27;api.endpoint&#x27;] = self
+</li>
+                
+                <li onclick="toggle('pre70122296819000', 'post70122296819000')">      if options[:app]
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-mount-0.8.3&#x2F;lib&#x2F;rack&#x2F;mount&#x2F;route_set.rb</code>: in <code>block in call</code>
+
+          
+          <div class="context" id="c70122289655480">
+              
+              <ol start="145" class="pre-context" id="pre70122289655480">
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        if route.prefix?
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">          env[Prefix::KEY] = matches[:path_info].to_s
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        end
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        old_params = env[@parameters_key]
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        env[@parameters_key] = (old_params || {}).merge(params)
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="152" class="context-line">
+              <li onclick="toggle('pre70122289655480', 'post70122289655480')">        result = route.app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='153' class="post-context" id="post70122289655480">
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        if result[1][X_CASCADE] == PASS
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">          env[@parameters_key] = old_params
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        else
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">          return result
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">        end
+</li>
+                
+                <li onclick="toggle('pre70122289655480', 'post70122289655480')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-mount-0.8.3&#x2F;lib&#x2F;rack&#x2F;mount&#x2F;code_generation.rb</code>: in <code>block in recognize</code>
+
+          
+          <div class="context" id="c70122289731960">
+              
+              <ol start="89" class="pre-context" id="pre70122289731960">
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">        instance_eval(&lt;&lt;-RUBY, __FILE__, __LINE__)
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">          def recognize(obj)
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            #{&quot;cache = {}&quot; if uses_cache}
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            container = @recognition_graph[#{keys}]
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            optimize_container_iterator(container) unless container.respond_to?(:optimized_each)
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            if block_given?
+</li>
+                
+              </ol>
+              
+
+            <ol start="96" class="context-line">
+              <li onclick="toggle('pre70122289731960', 'post70122289731960')">              container.optimized_each(obj) do |route, matches, params|<span>...</span></li></ol>
+
+              
+              <ol start='97' class="post-context" id="post70122289731960">
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">                yield route, matches, params
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">              end
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            else
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">              container.optimized_each(obj) do |route, matches, params|
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">                return route, matches, params
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">              end
+</li>
+                
+                <li onclick="toggle('pre70122289731960', 'post70122289731960')">            end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-mount-0.8.3&#x2F;lib&#x2F;rack&#x2F;mount&#x2F;code_generation.rb</code>: in <code>optimized_each</code>
+
+          
+          <div class="context" id="c70122289776120">
+              
+              <ol start="61" class="pre-context" id="pre70122289776120">
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">        }
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">        container.instance_eval(&lt;&lt;-RUBY, __FILE__, __LINE__)
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">          def optimized_each(obj)
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">            #{body.join(&quot;\n&quot;)}
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">            nil
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">          end
+</li>
+                
+              </ol>
+              
+
+            <ol start="68" class="context-line">
+              <li onclick="toggle('pre70122289776120', 'post70122289776120')">        RUBY<span>...</span></li></ol>
+
+              
+              <ol start='69' class="post-context" id="post70122289776120">
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">      def optimize_recognize!
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">        Utils.debug &quot;optimizing recognize&quot;
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">        uses_cache = false
+</li>
+                
+                <li onclick="toggle('pre70122289776120', 'post70122289776120')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-mount-0.8.3&#x2F;lib&#x2F;rack&#x2F;mount&#x2F;code_generation.rb</code>: in <code>recognize</code>
+
+          
+          <div class="context" id="c70122289829320">
+              
+              <ol start="88" class="pre-context" id="pre70122289829320">
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">        instance_eval(&lt;&lt;-RUBY, __FILE__, __LINE__)
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">          def recognize(obj)
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">            #{&quot;cache = {}&quot; if uses_cache}
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">            container = @recognition_graph[#{keys}]
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">            optimize_container_iterator(container) unless container.respond_to?(:optimized_each)
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="95" class="context-line">
+              <li onclick="toggle('pre70122289829320', 'post70122289829320')">            if block_given?<span>...</span></li></ol>
+
+              
+              <ol start='96' class="post-context" id="post70122289829320">
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">              container.optimized_each(obj) do |route, matches, params|
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">                yield route, matches, params
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">              end
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">            else
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">              container.optimized_each(obj) do |route, matches, params|
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">                return route, matches, params
+</li>
+                
+                <li onclick="toggle('pre70122289829320', 'post70122289829320')">              end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-mount-0.8.3&#x2F;lib&#x2F;rack&#x2F;mount&#x2F;route_set.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300395400">
+              
+              <ol start="134" class="pre-context" id="pre70122300395400">
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">      raise &#x27;route set not finalized&#x27; unless @recognition_graph
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">      env[PATH_INFO] = Utils.normalize_path(env[PATH_INFO])
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">      request = nil
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">      req = @request_class.new(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="141" class="context-line">
+              <li onclick="toggle('pre70122300395400', 'post70122300395400')">      recognize(req) do |route, matches, params|<span>...</span></li></ol>
+
+              
+              <ol start='142' class="post-context" id="post70122300395400">
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">        # TODO: We only want to unescape params from uri related methods
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">        params.each { |k, v| params[k] = Utils.unescape_uri(v) if v.is_a?(String) }
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">        if route.prefix?
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">          env[Prefix::KEY] = matches[:path_info].to_s
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">        end
+</li>
+                
+                <li onclick="toggle('pre70122300395400', 'post70122300395400')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;api.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300514900">
+              
+              <ol start="121" class="pre-context" id="pre70122300514900">
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">      self.class.endpoints.each do |endpoint|
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">        endpoint.mount_in(@route_set)
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">      @route_set.freeze
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    end
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="128" class="context-line">
+              <li onclick="toggle('pre70122300514900', 'post70122300514900')">      status, headers, body = @route_set.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='129' class="post-context" id="post70122300514900">
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">      headers.delete(&#x27;X-Cascade&#x27;) unless cascade?
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">      [status, headers, body]
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    end
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    # Some requests may return a HTTP 404 error if grape cannot find a matching
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    # route. In this case, Rack::Mount adds a X-Cascade header to the response
+</li>
+                
+                <li onclick="toggle('pre70122300514900', 'post70122300514900')">    # and sets it to &#x27;pass&#x27;, indicating to grape&#x27;s parents they should keep
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;api.rb</code>: in <code>call!</code>
+
+          
+          <div class="context" id="c70122300569520">
+              
+              <ol start="36" class="pre-context" id="pre70122300569520">
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">        LOCK.synchronize { compile } unless instance
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">        call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      def call!(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="43" class="context-line">
+              <li onclick="toggle('pre70122300569520', 'post70122300569520')">        instance.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='44' class="post-context" id="post70122300569520">
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      # Create a scope without affecting the URL.
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      #
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      # @param name [Symbol] Purely placebo, just allows to to name the scope to make the code more readable.
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">      def scope(name = nil, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122300569520', 'post70122300569520')">        nest(block)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;api.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300597380">
+              
+              <ol start="32" class="pre-context" id="pre70122300597380">
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      def change!
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">        @instance = nil
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">        LOCK.synchronize { compile } unless instance
+</li>
+                
+              </ol>
+              
+
+            <ol start="39" class="context-line">
+              <li onclick="toggle('pre70122300597380', 'post70122300597380')">        call!(env)<span>...</span></li></ol>
+
+              
+              <ol start='40' class="post-context" id="post70122300597380">
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">        instance.call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">
+</li>
+                
+                <li onclick="toggle('pre70122300597380', 'post70122300597380')">      # Create a scope without affecting the URL.
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;activerecord-4.0.12&#x2F;lib&#x2F;active_record&#x2F;connection_adapters&#x2F;abstract&#x2F;connection_pool.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300650840">
+              
+              <ol start="619" class="pre-context" id="pre70122300650840">
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">      def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        testing = env.key?(&#x27;rack.test&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="626" class="context-line">
+              <li onclick="toggle('pre70122300650840', 'post70122300650840')">        response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='627' class="post-context" id="post70122300650840">
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        response[2] = ::Rack::BodyProxy.new(response[2]) do
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">          ActiveRecord::Base.clear_active_connections! unless testing
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        end
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        response
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">      rescue
+</li>
+                
+                <li onclick="toggle('pre70122300650840', 'post70122300650840')">        ActiveRecord::Base.clear_active_connections! unless testing
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;napa-0.4.0&#x2F;lib&#x2F;napa&#x2F;middleware&#x2F;authentication.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300760880">
+              
+              <ol start="7" class="pre-context" id="pre70122300760880">
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">        if ENV[&#x27;HEADER_PASSWORDS&#x27;]
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">          @allowed_passwords = ENV[&#x27;HEADER_PASSWORDS&#x27;].split(&#x27;,&#x27;).map { |pw| pw.strip }.freeze
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">        end
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">        if authenticated_request?(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="14" class="context-line">
+              <li onclick="toggle('pre70122300760880', 'post70122300760880')">          @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='15' class="post-context" id="post70122300760880">
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">        else
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">          if @allowed_passwords
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">            error_response = Napa::JsonError.new(&#x27;bad_password&#x27;, &#x27;bad password&#x27;).to_json
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">          else
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">            error_response = Napa::JsonError.new(&#x27;not_configured&#x27;, &#x27;password not configured&#x27;).to_json
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">          end
+</li>
+                
+                <li onclick="toggle('pre70122300760880', 'post70122300760880')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;napa-0.4.0&#x2F;lib&#x2F;napa&#x2F;middleware&#x2F;app_monitor.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300798960">
+              
+              <ol start="5" class="pre-context" id="pre70122300798960">
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">        if [&quot;&#x2F;health&quot;, &quot;&#x2F;health.json&quot;].include? env[&#x27;PATH_INFO&#x27;]
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">          [200, { &#x27;Content-type&#x27; =&gt; &#x27;application&#x2F;json&#x27; }, [Napa::Identity.health.to_json]]
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">        else
+</li>
+                
+              </ol>
+              
+
+            <ol start="12" class="context-line">
+              <li onclick="toggle('pre70122300798960', 'post70122300798960')">          @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='13' class="post-context" id="post70122300798960">
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">        end
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">    end
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">  end
+</li>
+                
+                <li onclick="toggle('pre70122300798960', 'post70122300798960')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;napa-0.4.0&#x2F;lib&#x2F;napa&#x2F;middleware&#x2F;logger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300813880">
+              
+              <ol start="6" class="pre-context" id="pre70122300813880">
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">      end
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        # log the request
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        Napa::Logger.logger.info format_request(env)
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        # process the request
+</li>
+                
+              </ol>
+              
+
+            <ol start="13" class="context-line">
+              <li onclick="toggle('pre70122300813880', 'post70122300813880')">        status, headers, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='14' class="post-context" id="post70122300813880">
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        # log the response
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        Napa::Logger.logger.debug format_response(status, headers, body)
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        # return the results
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">        [status, headers, body]
+</li>
+                
+                <li onclick="toggle('pre70122300813880', 'post70122300813880')">      ensure
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>_call</code>
+
+          
+          <div class="context" id="c70122300827520">
+              
+              <ol start="42" class="pre-context" id="pre70122300827520">
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      assert(&quot;No env given&quot;) { env }
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      check_env env
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      env[&#x27;rack.input&#x27;] = InputWrapper.new(env[&#x27;rack.input&#x27;])
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      env[&#x27;rack.errors&#x27;] = ErrorWrapper.new(env[&#x27;rack.errors&#x27;])
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      ## and returns an Array of exactly three values:
+</li>
+                
+              </ol>
+              
+
+            <ol start="49" class="context-line">
+              <li onclick="toggle('pre70122300827520', 'post70122300827520')">      status, headers, @body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='50' class="post-context" id="post70122300827520">
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      ## The *status*,
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      check_status status
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      ## the *headers*,
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      check_headers headers
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">      check_hijack_response headers, env
+</li>
+                
+                <li onclick="toggle('pre70122300827520', 'post70122300827520')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122300945360">
+              
+              <ol start="30" class="pre-context" id="pre70122300945360">
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    ## after to catch all mistakes.
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    ## = Rack applications
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    ## A Rack application is a Ruby object (not a class) that
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    ## responds to +call+.
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    def call(env=nil)
+</li>
+                
+              </ol>
+              
+
+            <ol start="37" class="context-line">
+              <li onclick="toggle('pre70122300945360', 'post70122300945360')">      dup._call(env)<span>...</span></li></ol>
+
+              
+              <ol start='38' class="post-context" id="post70122300945360">
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    end
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">    def _call(env)
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">      ## It takes exactly one argument, the *environment*
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">      assert(&quot;No env given&quot;) { env }
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">      check_env env
+</li>
+                
+                <li onclick="toggle('pre70122300945360', 'post70122300945360')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;showexceptions.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122301022840">
+              
+              <ol start="17" class="pre-context" id="pre70122301022840">
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      @template = ERB.new(TEMPLATE)
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre70122301022840', 'post70122301022840')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post70122301022840">
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">    rescue StandardError, LoadError, SyntaxError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      exception_string = dump_exception(e)
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      env[&quot;rack.errors&quot;].puts(exception_string)
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      env[&quot;rack.errors&quot;].flush
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">
+</li>
+                
+                <li onclick="toggle('pre70122301022840', 'post70122301022840')">      if prefers_plain_text?(env)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;commonlogger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122301076580">
+              
+              <ol start="26" class="pre-context" id="pre70122301076580">
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">    def initialize(app, logger=nil)
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      @logger = logger
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      began_at = Time.now
+</li>
+                
+              </ol>
+              
+
+            <ol start="33" class="context-line">
+              <li onclick="toggle('pre70122301076580', 'post70122301076580')">      status, header, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='34' class="post-context" id="post70122301076580">
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      header = Utils::HeaderHash.new(header)
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      body = BodyProxy.new(body) { log(env, status, header, began_at) }
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">      [status, header, body]
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">    private
+</li>
+                
+                <li onclick="toggle('pre70122301076580', 'post70122301076580')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;shotgun-0.9&#x2F;lib&#x2F;shotgun&#x2F;loader.rb</code>: in <code>proceed_as_child</code>
+
+          
+          <div class="context" id="c70122301089960">
+              
+              <ol start="79" class="pre-context" id="pre70122301089960">
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">    ##
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">    # Stuff that happens in the child process
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">    def proceed_as_child
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">      boom = false
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">      @reader.close
+</li>
+                
+              </ol>
+              
+
+            <ol start="86" class="context-line">
+              <li onclick="toggle('pre70122301089960', 'post70122301089960')">      status, headers, body = assemble_app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='87' class="post-context" id="post70122301089960">
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">      Marshal.dump([:ok, status, headers.to_hash], @writer)
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">      spec_body(body).each { |chunk| @writer.write(chunk) }
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">    rescue Object =&gt; boom
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">      Marshal.dump([
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">        :error,
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">        &quot;#{boom.class.name}: #{boom.to_s}&quot;,
+</li>
+                
+                <li onclick="toggle('pre70122301089960', 'post70122301089960')">        boom.backtrace
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;shotgun-0.9&#x2F;lib&#x2F;shotgun&#x2F;loader.rb</code>: in <code>call!</code>
+
+          
+          <div class="context" id="c70122301128660">
+              
+              <ol start="24" class="pre-context" id="pre70122301128660">
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">      Shotgun.before_fork!
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">      if @child = fork
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">        proceed_as_parent
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">      else
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">        Shotgun.after_fork!
+</li>
+                
+              </ol>
+              
+
+            <ol start="31" class="context-line">
+              <li onclick="toggle('pre70122301128660', 'post70122301128660')">        proceed_as_child<span>...</span></li></ol>
+
+              
+              <ol start='32' class="post-context" id="post70122301128660">
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">      end
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">    ##
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">    # Stuff that happens in the parent process
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">
+</li>
+                
+                <li onclick="toggle('pre70122301128660', 'post70122301128660')">    def proceed_as_parent
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;shotgun-0.9&#x2F;lib&#x2F;shotgun&#x2F;loader.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122301157200">
+              
+              <ol start="11" class="pre-context" id="pre70122301157200">
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">    def initialize(rackup_file, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">      @rackup_file = rackup_file
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">      @config = block || Proc.new { }
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="18" class="context-line">
+              <li onclick="toggle('pre70122301157200', 'post70122301157200')">      dup.call!(env)<span>...</span></li></ol>
+
+              
+              <ol start='19' class="post-context" id="post70122301157200">
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">    def call!(env)
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">      @env = env
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">      @reader, @writer = IO.pipe
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">
+</li>
+                
+                <li onclick="toggle('pre70122301157200', 'post70122301157200')">      Shotgun.before_fork!
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;shotgun-0.9&#x2F;lib&#x2F;shotgun&#x2F;favicon.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122301189140">
+              
+              <ol start="5" class="pre-context" id="pre70122301189140">
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">      if env[&#x27;PATH_INFO&#x27;] == &#x27;&#x2F;favicon.ico&#x27;
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">        [404, {
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">          &#x27;Content-Type&#x27;  =&gt; &#x27;image&#x2F;png&#x27;,
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">          &#x27;Cache-Control&#x27; =&gt; &#x27;public, max-age=100000000000&#x27;
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">        }, []]
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">      else
+</li>
+                
+              </ol>
+              
+
+            <ol start="12" class="context-line">
+              <li onclick="toggle('pre70122301189140', 'post70122301189140')">        app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='13' class="post-context" id="post70122301189140">
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">      end
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">    end
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">  end
+</li>
+                
+                <li onclick="toggle('pre70122301189140', 'post70122301189140')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;builder.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70122289859700">
+              
+              <ol start="131" class="pre-context" id="pre70122289859700">
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    def to_app
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">      app = @map ? generate_map(@run, @map) : @run
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">      fail &quot;missing run or map statement&quot; unless app
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">      @use.reverse.inject(app) { |a,e| e[a] }
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    end
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="138" class="context-line">
+              <li onclick="toggle('pre70122289859700', 'post70122289859700')">      to_app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='139' class="post-context" id="post70122289859700">
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    end
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    private
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">    def generate_map(default_app, mapping)
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">      mapped = default_app ? {&#x27;&#x2F;&#x27; =&gt; default_app} : {}
+</li>
+                
+                <li onclick="toggle('pre70122289859700', 'post70122289859700')">      mapping.each { |r,b| mapped[r] = self.class.new(default_app, &amp;b) }
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;connection.rb</code>: in <code>block in pre_process</code>
+
+          
+          <div class="context" id="c70122289890900">
+              
+              <ol start="75" class="pre-context" id="pre70122289890900">
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      # When we&#x27;re under a non-async framework like rails, we can still spawn
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      # off async responses using the callback info, so there&#x27;s little point
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      # in removing this.
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      response = AsyncResponse
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      catch(:async) do
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">        # Process the request calling the Rack adapter
+</li>
+                
+              </ol>
+              
+
+            <ol start="82" class="context-line">
+              <li onclick="toggle('pre70122289890900', 'post70122289890900')">        response = @app.call(@request.env)<span>...</span></li></ol>
+
+              
+              <ol start='83' class="post-context" id="post70122289890900">
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      response
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">    rescue Exception =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      unexpected_error(e)
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      # Pass through error response
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">      can_persist? &amp;&amp; @request.persistent? ? Response::PERSISTENT_ERROR : Response::ERROR
+</li>
+                
+                <li onclick="toggle('pre70122289890900', 'post70122289890900')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;connection.rb</code>: in <code>catch</code>
+
+          
+          <div class="context" id="c70122289959080">
+              
+              <ol start="73" class="pre-context" id="pre70122289959080">
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">        end
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      # When we&#x27;re under a non-async framework like rails, we can still spawn
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      # off async responses using the callback info, so there&#x27;s little point
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      # in removing this.
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      response = AsyncResponse
+</li>
+                
+              </ol>
+              
+
+            <ol start="80" class="context-line">
+              <li onclick="toggle('pre70122289959080', 'post70122289959080')">      catch(:async) do<span>...</span></li></ol>
+
+              
+              <ol start='81' class="post-context" id="post70122289959080">
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">        # Process the request calling the Rack adapter
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">        response = @app.call(@request.env)
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      end
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      response
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">    rescue Exception =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      unexpected_error(e)
+</li>
+                
+                <li onclick="toggle('pre70122289959080', 'post70122289959080')">      # Pass through error response
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;connection.rb</code>: in <code>pre_process</code>
+
+          
+          <div class="context" id="c70122290011280">
+              
+              <ol start="73" class="pre-context" id="pre70122290011280">
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      end
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      # When we&#x27;re under a non-async framework like rails, we can still spawn
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      # off async responses using the callback info, so there&#x27;s little point
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      # in removing this.
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      response = AsyncResponse
+</li>
+                
+              </ol>
+              
+
+            <ol start="80" class="context-line">
+              <li onclick="toggle('pre70122290011280', 'post70122290011280')">      catch(:async) do<span>...</span></li></ol>
+
+              
+              <ol start='81' class="post-context" id="post70122290011280">
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">        # Process the request calling the Rack adapter
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">        response = @app.call(@request.env)
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      end
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      response
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">    rescue Exception =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      unexpected_error(e)
+</li>
+                
+                <li onclick="toggle('pre70122290011280', 'post70122290011280')">      # Pass through error response
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;connection.rb</code>: in <code>process</code>
+
+          
+          <div class="context" id="c70122290043540">
+              
+              <ol start="48" class="pre-context" id="pre70122290043540">
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">    # is ready to be processed.
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">    def process
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">      if threaded?
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">        @request.threaded = true
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">        EventMachine.defer(method(:pre_process), method(:post_process))
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">      else
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">        @request.threaded = false
+</li>
+                
+              </ol>
+              
+
+            <ol start="55" class="context-line">
+              <li onclick="toggle('pre70122290043540', 'post70122290043540')">        post_process(pre_process)<span>...</span></li></ol>
+
+              
+              <ol start='56' class="post-context" id="post70122290043540">
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">      end
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">    end
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">    def pre_process
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">      # Add client info to the request env
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">      @request.remote_address = remote_address
+</li>
+                
+                <li onclick="toggle('pre70122290043540', 'post70122290043540')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;connection.rb</code>: in <code>receive_data</code>
+
+          
+          <div class="context" id="c70122290070960">
+              
+              <ol start="34" class="pre-context" id="pre70122290070960">
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">      @response = Response.new
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    end
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    # Called when data is received from the client.
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    def receive_data(data)
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">      @idle = false
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">      trace data
+</li>
+                
+              </ol>
+              
+
+            <ol start="41" class="context-line">
+              <li onclick="toggle('pre70122290070960', 'post70122290070960')">      process if @request.parse(data)<span>...</span></li></ol>
+
+              
+              <ol start='42' class="post-context" id="post70122290070960">
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    rescue InvalidRequest =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">      log_error(&quot;Invalid request&quot;, e)
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">      post_process Response::BAD_REQUEST
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    end
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    # Called when all data was received and the request
+</li>
+                
+                <li onclick="toggle('pre70122290070960', 'post70122290070960')">    # is ready to be processed.
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;eventmachine-1.0.3&#x2F;lib&#x2F;eventmachine.rb</code>: in <code>run_machine</code>
+
+          
+          <div class="context" id="c70122290104080">
+              
+              <ol start="180" class="pre-context" id="pre70122290104080">
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        @reactor_running = true
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        initialize_event_machine
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        (b = blk || block) and add_timer(0, b)
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        if @next_tick_queue &amp;&amp; !@next_tick_queue.empty?
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">          add_timer(0) { signal_loopbreak }
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        @reactor_thread = Thread.current
+</li>
+                
+              </ol>
+              
+
+            <ol start="187" class="context-line">
+              <li onclick="toggle('pre70122290104080', 'post70122290104080')">        run_machine<span>...</span></li></ol>
+
+              
+              <ol start='188' class="post-context" id="post70122290104080">
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">      ensure
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        until @tails.empty?
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">          @tails.pop.call
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">        begin
+</li>
+                
+                <li onclick="toggle('pre70122290104080', 'post70122290104080')">          release_machine
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;eventmachine-1.0.3&#x2F;lib&#x2F;eventmachine.rb</code>: in <code>run</code>
+
+          
+          <div class="context" id="c70122290283860">
+              
+              <ol start="180" class="pre-context" id="pre70122290283860">
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        @reactor_running = true
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        initialize_event_machine
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        (b = blk || block) and add_timer(0, b)
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        if @next_tick_queue &amp;&amp; !@next_tick_queue.empty?
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">          add_timer(0) { signal_loopbreak }
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        @reactor_thread = Thread.current
+</li>
+                
+              </ol>
+              
+
+            <ol start="187" class="context-line">
+              <li onclick="toggle('pre70122290283860', 'post70122290283860')">        run_machine<span>...</span></li></ol>
+
+              
+              <ol start='188' class="post-context" id="post70122290283860">
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">      ensure
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        until @tails.empty?
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">          @tails.pop.call
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">        begin
+</li>
+                
+                <li onclick="toggle('pre70122290283860', 'post70122290283860')">          release_machine
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;backends&#x2F;base.rb</code>: in <code>start</code>
+
+          
+          <div class="context" id="c70122290451040">
+              
+              <ol start="66" class="pre-context" id="pre70122290451040">
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        # Allow for early run up of eventmachine.
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        if EventMachine.reactor_running?
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">          starter.call
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        else
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">          @started_reactor = true
+</li>
+                
+              </ol>
+              
+
+            <ol start="73" class="context-line">
+              <li onclick="toggle('pre70122290451040', 'post70122290451040')">          EventMachine.run(&amp;starter)<span>...</span></li></ol>
+
+              
+              <ol start='74' class="post-context" id="post70122290451040">
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        end
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">      end
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">      
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">      # Stop of the backend from accepting new connections.
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">      def stop
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        @running  = false
+</li>
+                
+                <li onclick="toggle('pre70122290451040', 'post70122290451040')">        @stopping = true
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;thin-1.6.1&#x2F;lib&#x2F;thin&#x2F;server.rb</code>: in <code>start</code>
+
+          
+          <div class="context" id="c70122290464540">
+              
+              <ol start="155" class="pre-context" id="pre70122290464540">
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      log_info  &quot;Thin web server (v#{VERSION::STRING} codename #{VERSION::CODENAME})&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      log_debug &quot;Debugging ON&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      trace     &quot;Tracing ON&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      log_info &quot;Maximum connections set to #{@backend.maximum_connections}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      log_info &quot;Listening on #{@backend}, CTRL+C to stop&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">      
+</li>
+                
+              </ol>
+              
+
+            <ol start="162" class="context-line">
+              <li onclick="toggle('pre70122290464540', 'post70122290464540')">      @backend.start { setup_signals if @setup_signals }<span>...</span></li></ol>
+
+              
+              <ol start='163' class="post-context" id="post70122290464540">
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    end
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    alias :start! :start
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    # == Gracefull shutdown
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    # Stops the server after processing all current connections.
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    # As soon as this method is called, the server stops accepting
+</li>
+                
+                <li onclick="toggle('pre70122290464540', 'post70122290464540')">    # new requests and wait for all current connections to finish.
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;rack-1.5.2&#x2F;lib&#x2F;rack&#x2F;handler&#x2F;thin.rb</code>: in <code>run</code>
+
+          
+          <div class="context" id="c70122290500920">
+              
+              <ol start="9" class="pre-context" id="pre70122290500920">
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        host = options.delete(:Host) || &#x27;0.0.0.0&#x27;
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        port = options.delete(:Port) || 8080
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        args = [host, port, app, options]
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        # Thin versions below 0.8.0 do not support additional options
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        args.pop if ::Thin::VERSION::MAJOR &lt; 1 &amp;&amp; ::Thin::VERSION::MINOR &lt; 8
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        server = ::Thin::Server.new(*args)
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        yield server if block_given?
+</li>
+                
+              </ol>
+              
+
+            <ol start="16" class="context-line">
+              <li onclick="toggle('pre70122290500920', 'post70122290500920')">        server.start<span>...</span></li></ol>
+
+              
+              <ol start='17' class="post-context" id="post70122290500920">
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">      end
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">      def self.valid_options
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        {
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">          &quot;Host=HOST&quot; =&gt; &quot;Hostname to listen on (default: localhost)&quot;,
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">          &quot;Port=PORT&quot; =&gt; &quot;Port to listen on (default: 8080)&quot;,
+</li>
+                
+                <li onclick="toggle('pre70122290500920', 'post70122290500920')">        }
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;shotgun-0.9&#x2F;bin&#x2F;shotgun</code>: in <code>&lt;top (required)&gt;</code>
+
+          
+          <div class="context" id="c70122290519520">
+              
+              <ol start="149" class="pre-context" id="pre70122290519520">
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">end
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')"># load shotgun.rb in current working directory if it exists
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">Shotgun.preload
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">base_url = &quot;http:&#x2F;&#x2F;#{options[:Host]}:#{options[:Port]}#{options[:Path]}&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">puts &quot;== Shotgun&#x2F;#{server.to_s.sub(&#x2F;Rack::Handler::&#x2F;, &#x27;&#x27;)} on #{base_url}&quot;
+</li>
+                
+              </ol>
+              
+
+            <ol start="156" class="context-line">
+              <li onclick="toggle('pre70122290519520', 'post70122290519520')">server.run app, options do |inst|<span>...</span></li></ol>
+
+              
+              <ol start='157' class="post-context" id="post70122290519520">
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">  if browse
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">    if ENV[&#x27;BROWSER&#x27;]
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">      system &quot;#{ENV[&#x27;BROWSER&#x27;]} &#x27;#{base_url}&#x27;&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">    else
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">      abort &quot;BROWSER environment variable not set and no browser detected&quot;
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">    end
+</li>
+                
+                <li onclick="toggle('pre70122290519520', 'post70122290519520')">  end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;bin&#x2F;shotgun</code>: in <code>load</code>
+
+          
+          <div class="context" id="c70122290530760">
+              
+              <ol start="16" class="pre-context" id="pre70122290530760">
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">  if str =~ &#x2F;\A_(.*)_\z&#x2F;
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">    version = $1
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">    ARGV.shift
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">  end
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">end
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">
+</li>
+                
+                <li onclick="toggle('pre70122290530760', 'post70122290530760')">gem &#x27;shotgun&#x27;, version
+</li>
+                
+              </ol>
+              
+
+            <ol start="23" class="context-line">
+              <li onclick="toggle('pre70122290530760', 'post70122290530760')">load Gem.bin_path(&#x27;shotgun&#x27;, &#x27;shotgun&#x27;, version)<span>...</span></li></ol>
+
+              
+              <ol start='24' class="post-context" id="post70122290530760">
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;bin&#x2F;shotgun</code>: in <code>&lt;main&gt;</code>
+
+          
+          <div class="context" id="c70122290550760">
+              
+              <ol start="16" class="pre-context" id="pre70122290550760">
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">  if str =~ &#x2F;\A_(.*)_\z&#x2F;
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">    version = $1
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">    ARGV.shift
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">  end
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">end
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">
+</li>
+                
+                <li onclick="toggle('pre70122290550760', 'post70122290550760')">gem &#x27;shotgun&#x27;, version
+</li>
+                
+              </ol>
+              
+
+            <ol start="23" class="context-line">
+              <li onclick="toggle('pre70122290550760', 'post70122290550760')">load Gem.bin_path(&#x27;shotgun&#x27;, &#x27;shotgun&#x27;, version)<span>...</span></li></ol>
+
+              
+              <ol start='24' class="post-context" id="post70122290550760">
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+  </ul>
+</div>
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data.</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <tr>
+            <td>email</td>
+            <td class="code"><div>&quot;ssapra@uchicago.edu&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>merchant_id</td>
+            <td class="code"><div>&quot;184&quot;</div></td>
+          </tr>
+          
+      </tbody>
+    </table>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data.</p>
+  
+
+  <h3 id="env-info">Rack ENV</h3>
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <tr>
+            <td>CONTENT_LENGTH</td>
+            <td class="code"><div>41</div></td>
+          </tr>
+          
+          <tr>
+            <td>CONTENT_TYPE</td>
+            <td class="code"><div>application&#x2F;x-www-form-urlencoded</div></td>
+          </tr>
+          
+          <tr>
+            <td>GATEWAY_INTERFACE</td>
+            <td class="code"><div>CGI&#x2F;1.2</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_ACCEPT</td>
+            <td class="code"><div>*&#x2F;*</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_HOST</td>
+            <td class="code"><div>localhost:9393</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_PASSWORD</td>
+            <td class="code"><div>spasdrow</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_USER_AGENT</td>
+            <td class="code"><div>curl&#x2F;7.37.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_VERSION</td>
+            <td class="code"><div>HTTP&#x2F;1.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>PATH_INFO</td>
+            <td class="code"><div>&#x2F;checkins</div></td>
+          </tr>
+          
+          <tr>
+            <td>QUERY_STRING</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>REMOTE_ADDR</td>
+            <td class="code"><div>127.0.0.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_METHOD</td>
+            <td class="code"><div>POST</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_PATH</td>
+            <td class="code"><div>&#x2F;checkins</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_URI</td>
+            <td class="code"><div>&#x2F;checkins</div></td>
+          </tr>
+          
+          <tr>
+            <td>SCRIPT_NAME</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_NAME</td>
+            <td class="code"><div>localhost</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PORT</td>
+            <td class="code"><div>9393</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PROTOCOL</td>
+            <td class="code"><div>HTTP&#x2F;1.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_SOFTWARE</td>
+            <td class="code"><div>thin 1.6.1 codename Death Proof</div></td>
+          </tr>
+          
+          <tr>
+            <td>api.endpoint</td>
+            <td class="code"><div>#&lt;Grape::Endpoint:0x007f8d3f83b520 @settings=#&lt;Grape::Util::HashStack:0x007f8d3c690fc0 @stack=[{:declared_params=&gt;[], :validations=&gt;[], :format=&gt;:json, :default_error_formatter=&gt;Grape::ErrorFormatter::Json, :content_types=&gt;{:json=&gt;&quot;application&#x2F;json&quot;}, :rescue_handlers=&gt;{ActiveRecord::RecordNotFound=&gt;#&lt;Proc:0x007f8d3db0d638@&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;napa-0.4.0&#x2F;lib&#x2F;napa&#x2F;grape_extenders.rb:8&gt;, ActiveRecord::RecordInvalid=&gt;#&lt;Proc:0x007f8d3db0d4a8@&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;napa-0.4.0&#x2F;lib&#x2F;napa&#x2F;grape_extenders.rb:13&gt;}, :rescue_options=&gt;{}, :mount_path=&gt;&quot;&#x2F;checkins&quot;}, {:declared_params=&gt;[:merchant_id, :email], :validations=&gt;[#&lt;Grape::Validations::PresenceValidator:0x007f8d3c691ba0 @attrs=[:merchant_id], @required=true, @scope=#&lt;Grape::Validations::ParamsScope:0x007f8d3c6921e0 @element=nil, @parent=nil, @api=CheckinsApi, @optional=false, @type=Hash, @declared_params=[:merchant_id, :email]&gt;&gt;, #&lt;Grape::Validations::CoerceValidator:0x007f8d3c691a88 @option=Integer, @attrs=[:merchant_id], @required=true, @scope=#&lt;Grape::Validations::ParamsScope:0x007f8d3c6921e0 @element=nil, @parent=nil, @api=CheckinsApi, @optional=false, @type=Hash, @declared_params=[:merchant_id, :email]&gt;&gt;, #&lt;Grape::Validations::PresenceValidator:0x007f8d3c691330 @attrs=[:email], @required=true, @scope=#&lt;Grape::Validations::ParamsScope:0x007f8d3c6921e0 @element=nil, @parent=nil, @api=CheckinsApi, @optional=false, @type=Hash, @declared_params=[:merchant_id, :email]&gt;&gt;, #&lt;Grape::Validations::CoerceValidator:0x007f8d3c6912e0 @option=String, @attrs=[:email], @required=true, @scope=#&lt;Grape::Validations::ParamsScope:0x007f8d3c6921e0 @element=nil, @parent=nil, @api=CheckinsApi, @optional=false, @type=Hash, @declared_params=[:merchant_id, :email]&gt;&gt;], :default_error_status=&gt;500}]&gt;, @options={:method=&gt;[&quot;POST&quot;], :path=&gt;[&quot;&#x2F;&quot;], :route_options=&gt;{:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}}}, @source=#&lt;Proc:0x007f8d3c6911c8@&#x2F;Users&#x2F;ssapra&#x2F;Copy&#x2F;Shaan&#x2F;dev&#x2F;checkin&#x2F;app&#x2F;apis&#x2F;checkins_api.rb:7&gt;, @block=#&lt;Proc:0x007f8d3c6904f8@&#x2F;Users&#x2F;ssapra&#x2F;.rbenv&#x2F;versions&#x2F;2.0.0-p247&#x2F;lib&#x2F;ruby&#x2F;gems&#x2F;2.0.0&#x2F;gems&#x2F;grape-0.9.0&#x2F;lib&#x2F;grape&#x2F;endpoint.rb:45&gt;, @namespace=&quot;&#x2F;&quot;, @routes=[#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;], @env={&quot;SERVER_SOFTWARE&quot;=&gt;&quot;thin 1.6.1 codename Death Proof&quot;, &quot;SERVER_NAME&quot;=&gt;&quot;localhost&quot;, &quot;rack.input&quot;=&gt;#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;, &quot;rack.version&quot;=&gt;[1, 0], &quot;rack.errors&quot;=&gt;#&lt;Rack::Lint::ErrorWrapper:0x007f8d3d3165d8 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;, &quot;rack.multithread&quot;=&gt;false, &quot;rack.multiprocess&quot;=&gt;false, &quot;rack.run_once&quot;=&gt;false, &quot;REQUEST_METHOD&quot;=&gt;&quot;POST&quot;, &quot;REQUEST_PATH&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;PATH_INFO&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;REQUEST_URI&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;HTTP_VERSION&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;HTTP_USER_AGENT&quot;=&gt;&quot;curl&#x2F;7.37.1&quot;, &quot;HTTP_HOST&quot;=&gt;&quot;localhost:9393&quot;, &quot;HTTP_ACCEPT&quot;=&gt;&quot;*&#x2F;*&quot;, &quot;HTTP_PASSWORD&quot;=&gt;&quot;spasdrow&quot;, &quot;CONTENT_LENGTH&quot;=&gt;&quot;41&quot;, &quot;CONTENT_TYPE&quot;=&gt;&quot;application&#x2F;x-www-form-urlencoded&quot;, &quot;GATEWAY_INTERFACE&quot;=&gt;&quot;CGI&#x2F;1.2&quot;, &quot;SERVER_PORT&quot;=&gt;&quot;9393&quot;, &quot;QUERY_STRING&quot;=&gt;&quot;&quot;, &quot;SERVER_PROTOCOL&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;rack.url_scheme&quot;=&gt;&quot;http&quot;, &quot;SCRIPT_NAME&quot;=&gt;&quot;&quot;, &quot;REMOTE_ADDR&quot;=&gt;&quot;127.0.0.1&quot;, &quot;async.callback&quot;=&gt;#&lt;Method: Thin::Connection#post_process&gt;, &quot;async.close&quot;=&gt;#&lt;EventMachine::DefaultDeferrable:0x007f8d3bcc0590&gt;, &quot;rack.request.query_string&quot;=&gt;&quot;&quot;, &quot;rack.request.query_hash&quot;=&gt;{}, &quot;rack.request.form_input&quot;=&gt;#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;, &quot;rack.request.form_hash&quot;=&gt;{&quot;merchant_id&quot;=&gt;&quot;184&quot;, &quot;email&quot;=&gt;&quot;ssapra@uchicago.edu&quot;}, &quot;rack.request.form_vars&quot;=&gt;&quot;merchant_id=184&amp;email=ssapra@uchicago.edu&quot;, &quot;rack.routing_args&quot;=&gt;{:route_info=&gt;#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;}, &quot;api.endpoint&quot;=&gt;#&lt;Grape::Endpoint:0x007f8d3f83b520 ...&gt;, &quot;api.format&quot;=&gt;:json, &quot;rack.request.cookie_hash&quot;=&gt;{}}, @header={}, @request=#&lt;Grape::Request:0x007f8d3f8c9398 @env={&quot;SERVER_SOFTWARE&quot;=&gt;&quot;thin 1.6.1 codename Death Proof&quot;, &quot;SERVER_NAME&quot;=&gt;&quot;localhost&quot;, &quot;rack.input&quot;=&gt;#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;, &quot;rack.version&quot;=&gt;[1, 0], &quot;rack.errors&quot;=&gt;#&lt;Rack::Lint::ErrorWrapper:0x007f8d3d3165d8 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;, &quot;rack.multithread&quot;=&gt;false, &quot;rack.multiprocess&quot;=&gt;false, &quot;rack.run_once&quot;=&gt;false, &quot;REQUEST_METHOD&quot;=&gt;&quot;POST&quot;, &quot;REQUEST_PATH&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;PATH_INFO&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;REQUEST_URI&quot;=&gt;&quot;&#x2F;checkins&quot;, &quot;HTTP_VERSION&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;HTTP_USER_AGENT&quot;=&gt;&quot;curl&#x2F;7.37.1&quot;, &quot;HTTP_HOST&quot;=&gt;&quot;localhost:9393&quot;, &quot;HTTP_ACCEPT&quot;=&gt;&quot;*&#x2F;*&quot;, &quot;HTTP_PASSWORD&quot;=&gt;&quot;spasdrow&quot;, &quot;CONTENT_LENGTH&quot;=&gt;&quot;41&quot;, &quot;CONTENT_TYPE&quot;=&gt;&quot;application&#x2F;x-www-form-urlencoded&quot;, &quot;GATEWAY_INTERFACE&quot;=&gt;&quot;CGI&#x2F;1.2&quot;, &quot;SERVER_PORT&quot;=&gt;&quot;9393&quot;, &quot;QUERY_STRING&quot;=&gt;&quot;&quot;, &quot;SERVER_PROTOCOL&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;rack.url_scheme&quot;=&gt;&quot;http&quot;, &quot;SCRIPT_NAME&quot;=&gt;&quot;&quot;, &quot;REMOTE_ADDR&quot;=&gt;&quot;127.0.0.1&quot;, &quot;async.callback&quot;=&gt;#&lt;Method: Thin::Connection#post_process&gt;, &quot;async.close&quot;=&gt;#&lt;EventMachine::DefaultDeferrable:0x007f8d3bcc0590&gt;, &quot;rack.request.query_string&quot;=&gt;&quot;&quot;, &quot;rack.request.query_hash&quot;=&gt;{}, &quot;rack.request.form_input&quot;=&gt;#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;, &quot;rack.request.form_hash&quot;=&gt;{&quot;merchant_id&quot;=&gt;&quot;184&quot;, &quot;email&quot;=&gt;&quot;ssapra@uchicago.edu&quot;}, &quot;rack.request.form_vars&quot;=&gt;&quot;merchant_id=184&amp;email=ssapra@uchicago.edu&quot;, &quot;rack.routing_args&quot;=&gt;{:route_info=&gt;#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;}, &quot;api.endpoint&quot;=&gt;#&lt;Grape::Endpoint:0x007f8d3f83b520 ...&gt;, &quot;api.format&quot;=&gt;:json, &quot;rack.request.cookie_hash&quot;=&gt;{}}, @params=#&lt;Hashie::Mash email=&quot;ssapra@uchicago.edu&quot; merchant_id=184 route_info=#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;&gt;, @headers={&quot;Version&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;User-Agent&quot;=&gt;&quot;curl&#x2F;7.37.1&quot;, &quot;Host&quot;=&gt;&quot;localhost:9393&quot;, &quot;Accept&quot;=&gt;&quot;*&#x2F;*&quot;, &quot;Password&quot;=&gt;&quot;spasdrow&quot;}&gt;, @params=#&lt;Hashie::Mash email=&quot;ssapra@uchicago.edu&quot; merchant_id=184 route_info=#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;&gt;, @headers={&quot;Version&quot;=&gt;&quot;HTTP&#x2F;1.1&quot;, &quot;User-Agent&quot;=&gt;&quot;curl&#x2F;7.37.1&quot;, &quot;Host&quot;=&gt;&quot;localhost:9393&quot;, &quot;Accept&quot;=&gt;&quot;*&#x2F;*&quot;, &quot;Password&quot;=&gt;&quot;spasdrow&quot;}, @cookies=#&lt;Grape::Cookies:0x007f8d3f9108d8 @cookies={}, @send_cookies={}&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>api.format</td>
+            <td class="code"><div>:json</div></td>
+          </tr>
+          
+          <tr>
+            <td>async.callback</td>
+            <td class="code"><div>#&lt;Method: Thin::Connection#post_process&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>async.close</td>
+            <td class="code"><div>#&lt;EventMachine::DefaultDeferrable:0x007f8d3bcc0590&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.errors</td>
+            <td class="code"><div>#&lt;Rack::Lint::ErrorWrapper:0x007f8d3d3165d8 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.input</td>
+            <td class="code"><div>#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multiprocess</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multithread</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.cookie_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_hash</td>
+            <td class="code"><div>{&quot;merchant_id&quot;=&gt;&quot;184&quot;, &quot;email&quot;=&gt;&quot;ssapra@uchicago.edu&quot;}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_input</td>
+            <td class="code"><div>#&lt;Rack::Lint::InputWrapper:0x007f8d3d316650 @input=#&lt;StringIO:0x007f8d3bcc0d60&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_vars</td>
+            <td class="code"><div>merchant_id=184&amp;email=ssapra@uchicago.edu</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_string</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.routing_args</td>
+            <td class="code"><div>{:route_info=&gt;#&lt;Grape::Route:0x007f8d3c7b9690 @options={:description=&gt;&quot;Create a checkin&quot;, :params=&gt;{&quot;merchant_id&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Merchant id&quot;}, &quot;email&quot;=&gt;{:required=&gt;true, :type=&gt;&quot;String&quot;, :desc=&gt;&quot;The email of the person&quot;}}, :prefix=&gt;nil, :version=&gt;nil, :namespace=&gt;&quot;&#x2F;&quot;, :method=&gt;&quot;POST&quot;, :path=&gt;&quot;&#x2F;checkins(.:format)&quot;, :compiled=&gt;&#x2F;\A\&#x2F;checkins(?:\.(?&lt;format&gt;[^\&#x2F;.?]+))?\Z&#x2F;}&gt;}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.run_once</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.url_scheme</td>
+            <td class="code"><div>http</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.version</td>
+            <td class="code"><div>[1, 0]</div></td>
+          </tr>
+          
+      </tbody>
+    </table>
+
+</div>
+
+<div id="explanation">
+  <p>
+    You're seeing this error because you use <code>Rack::ShowExceptions</code>.
+  </p>
+</div>
+
+</body>
+</html>
