@@ -34,6 +34,22 @@ describe MerchantsApi do
       end
     end
 
+    context 'when the ids parameter is present' do
+      before do
+        @merchant = create(:merchant, name: 'ABC')
+        @merchant2 = create(:merchant, name: 'Bob\'\s Pizza')
+        @merchant3 = create(:merchant, name: 'Cuper Cuts')
+        get '/merchants', {ids: "#{@merchant.id},#{@merchant2.id}"}
+        @json = JSON.parse(last_response.body)
+      end
+
+      it 'returns only the first two merchants' do
+        expect(@json['data'].length).to eq 2
+        expect(@json['data'][0]['id']).to eq @merchant.id.to_s
+        expect(@json['data'][1]['id']).to eq @merchant2.id.to_s
+      end
+    end
+
     context 'when the sort parameter is present' do
       before do
         @merchant = create(:merchant, name: 'ABC')

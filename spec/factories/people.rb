@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :person do
-    email { 'ssapra@uchicago.edu' }
+    email { Faker::Internet.email }
   end
 end

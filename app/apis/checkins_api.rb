@@ -1,7 +1,7 @@
 class CheckinsApi < Grape::API
   desc 'Create a checkin'
   params do
-    requires :merchant_id, type: Integer, desc: 'Merchant id'
+    requires :merchant_id, type: Integer, desc: 'Find merchant by id'
     requires :email, type: String, desc: 'The email of the person'
   end
   post do

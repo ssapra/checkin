@@ -52,10 +52,6 @@ describe CheckinsApi do
       it 'creates a new checkin' do
         expect(Checkin.count).to eq (@checkins_count + 1)
       end
-
-      it 'returns a 200 status code' do
-        expect(last_response.status).to eq 201
-      end
     end
   end
 end
