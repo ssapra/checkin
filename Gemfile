@@ -6,7 +6,7 @@ gem 'pg'
 gem 'activerecord', '~> 4.0.0', :require => 'active_record'
 gem 'honeybadger'
 gem 'json'
-gem 'napa', :path => "~/Shaan/dev/napa"
+gem 'napa', :git => "https://github.com/ssapra/napa"
 gem 'roar'
 gem 'grape-swagger'
 gem 'valid_email'

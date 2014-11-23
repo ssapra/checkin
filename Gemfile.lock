@@ -1,5 +1,6 @@
-PATH
-  remote: ~/Shaan/dev/napa
+GIT
+  remote: https://github.com/ssapra/napa
+  revision: 37d9fd4822e09f831058f13128946aefcad3a9f7
   specs:
     napa (0.4.0)
       dotenv (~> 1.0)
