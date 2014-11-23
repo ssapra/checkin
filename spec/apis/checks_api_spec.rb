@@ -11,7 +11,7 @@ describe CheckinsApi do
     context 'when the merhant is not found' do
       before do
         @merchant_id = 10
-        post '/checkins', {merchant_id: @merchant_id}
+        post '/checkins', {merchant_id: @merchant_id, email: 'ssapra@uchicago.edu'}
         @json = JSON.parse(last_response.body)
       end
 

@@ -25,8 +25,8 @@ describe Person do
         expect(@person).to_not be_valid
       end
 
-      it 'should have an error on the email attribute' do
-        expect(@person.errors[:email].size).to eq 1
+      it 'should have 2 errors on the email attribute' do
+        expect(@person.errors[:email].size).to eq 2
       end
     end
 
@@ -45,5 +45,4 @@ describe Person do
       end
     end
   end
-
 end

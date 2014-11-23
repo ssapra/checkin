@@ -9,6 +9,7 @@ gem 'json'
 gem 'napa'
 gem 'roar'
 gem 'grape-swagger'
+gem 'valid_email'
 
 group :development,:test do
   gem 'pry'
