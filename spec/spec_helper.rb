@@ -31,6 +31,7 @@ Dir['./spec/support/**/*.rb'].each { |f| require f }
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Napa::RspecExtensions::ResponseHelpers
+  config.color = true
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

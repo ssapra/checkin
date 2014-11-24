@@ -22,9 +22,7 @@ describe MerchantsApi do
 
     context 'when there are many merchants' do
       before do
-        @merchant = create(:merchant)
-        @merchant2 = create(:merchant)
-        @merchant3 = create(:merchant)
+        3.times { create(:merchant) }
         get '/merchants'
         @json = JSON.parse(last_response.body)
       end
@@ -39,7 +37,7 @@ describe MerchantsApi do
         @merchant = create(:merchant, name: 'ABC')
         @merchant2 = create(:merchant, name: 'Bob\'\s Pizza')
         @merchant3 = create(:merchant, name: 'Cuper Cuts')
-        get '/merchants', {ids: "#{@merchant.id},#{@merchant2.id}"}
+        get '/merchants', ids: "#{@merchant.id},#{@merchant2.id}"
         @json = JSON.parse(last_response.body)
       end
 
@@ -58,7 +56,7 @@ describe MerchantsApi do
 
       context 'when the parameter is name' do
         before do
-          get '/merchants', {sort: 'name'}
+          get '/merchants', sort: 'name'
         end
 
         it 'orders them in ascending order' do
@@ -70,7 +68,7 @@ describe MerchantsApi do
 
       context 'when the parameter is -name' do
         before do
-          get '/merchants', {sort: '-name'}
+          get '/merchants', sort: '-name'
         end
 
         it 'orders them in descending order' do

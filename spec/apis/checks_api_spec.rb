@@ -11,12 +11,12 @@ describe CheckinsApi do
     context 'when the merhant is not found' do
       before do
         @merchant_id = 10
-        post '/checkins', {merchant_id: @merchant_id, email: 'ssapra@uchicago.edu'}
+        post '/checkins', merchant_id: @merchant_id, email: 'ssapra@uchicago.edu'
         @json = JSON.parse(last_response.body)
       end
 
       it 'should return a 404 status code' do
-        expect(@json['error']['code']).to eq 404
+        expect(last_response.status).to eq 404
       end
 
       it 'should return an error message' do
@@ -27,13 +27,13 @@ describe CheckinsApi do
     context 'when the email is invalid' do
       before do
         merchant = create(:merchant)
-        @email = "ssapra"
-        post '/checkins', {merchant_id: merchant.id, email: @email}
+        @email = 'ssapra'
+        post '/checkins', merchant_id: merchant.id, email: @email
         @json = JSON.parse(last_response.body)
       end
 
       it 'should return a 422 status code' do
-        expect(@json['error']['code']).to eq 422
+        expect(last_response.status).to eq 422
       end
 
       it 'should return an error message' do
@@ -46,11 +46,11 @@ describe CheckinsApi do
         @person = create(:person)
         @merchant = create(:merchant)
         @checkins_count = Checkin.count
-        post '/checkins', {merchant_id: @merchant.id, email: @person.email}
+        post '/checkins', merchant_id: @merchant.id, email: @person.email
       end
 
       it 'creates a new checkin' do
-        expect(Checkin.count).to eq (@checkins_count + 1)
+        expect(Checkin.count).to eq @checkins_count + 1
       end
     end
   end

@@ -22,9 +22,7 @@ describe MerchantsApi do
 
     context 'when there are many people' do
       before do
-        person = create(:person)
-        person2 = create(:person)
-        person3 = create(:person)
+        3.times { create(:person) }
         get '/people'
         @json = JSON.parse(last_response.body)
       end
@@ -38,8 +36,8 @@ describe MerchantsApi do
       before do
         @person = create(:person)
         @person2 = create(:person)
-        person3 = create(:person)
-        get '/people', {ids: "#{@person.id},#{@person2.id}"}
+        create(:person)
+        get '/people', ids: "#{@person.id},#{@person2.id}"
         @json = JSON.parse(last_response.body)
       end
 
@@ -54,12 +52,11 @@ describe MerchantsApi do
   describe 'GET /people/:id' do
     context 'when the person cannot be found' do
       before do
-        get "/people/100"
-        @json = JSON.parse(last_response.body)
+        get '/people/100'
       end
 
       it 'should return a 404 status code' do
-        expect(@json['error']['code']).to eq 404
+        expect(last_response.status).to eq 404
       end
     end
 
@@ -79,12 +76,11 @@ describe MerchantsApi do
   describe 'GET /people/:id/merchants' do
     context 'when the person cannot be found' do
       before do
-        get "/people/100/merchants"
-        @json = JSON.parse(last_response.body)
+        get '/people/100/merchants'
       end
 
       it 'should return a 404 status code' do
-        expect(@json['error']['code']).to eq 404
+        expect(last_response.status).to eq 404
       end
     end
 
@@ -92,7 +88,7 @@ describe MerchantsApi do
       before do
         person = create(:person)
         @merchant = create(:merchant)
-        checkin = create(:checkin, merchant_id: @merchant.id, person_id: person.id)
+        create(:checkin, merchant_id: @merchant.id, person_id: person.id)
         get "/people/#{person.id}/merchants"
         @json = JSON.parse(last_response.body)
       end
@@ -128,7 +124,7 @@ describe MerchantsApi do
 
       context 'and the limit parameter is present' do
         before do
-          get "/people/#{@person.id}/merchants", { limit: 1 }
+          get "/people/#{@person.id}/merchants", limit: 1
           @json = JSON.parse(last_response.body)
         end
 

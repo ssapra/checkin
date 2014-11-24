@@ -4,7 +4,7 @@ describe Checkin do
   describe '#valid' do
     context 'when the foreign keys are present' do
       before do
-      @checkin = build(:checkin)
+        @checkin = build(:checkin)
       end
 
       it 'should be valid' do
