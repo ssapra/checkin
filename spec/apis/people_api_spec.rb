@@ -63,12 +63,37 @@ describe MerchantsApi do
       end
     end
 
-    context 'when a person checks in with one merchant' do
+    context 'when the person is found' do
+      before do
+        @person = create(:person)
+        get "/people/#{@person.id}"
+        @json = JSON.parse(last_response.body)
+      end
+
+      it 'should return the person' do
+        expect(@json['data']['id']).to eq @person.id.to_s
+      end
+    end
+  end
+
+  describe 'GET /people/:id/merchants' do
+    context 'when the person cannot be found' do
+      before do
+        get "/people/100/merchants"
+        @json = JSON.parse(last_response.body)
+      end
+
+      it 'should return a 404 status code' do
+        expect(@json['error']['code']).to eq 404
+      end
+    end
+
+    context 'when a person has checked in with one merchant' do
       before do
         person = create(:person)
         @merchant = create(:merchant)
         checkin = create(:checkin, merchant_id: @merchant.id, person_id: person.id)
-        get "/people/#{person.id}"
+        get "/people/#{person.id}/merchants"
         @json = JSON.parse(last_response.body)
       end
 
@@ -90,7 +115,7 @@ describe MerchantsApi do
 
       context 'and the limit parameter is not present' do
         before do
-          get "/people/#{@person.id}"
+          get "/people/#{@person.id}/merchants"
           @json = JSON.parse(last_response.body)
         end
 
@@ -103,7 +128,7 @@ describe MerchantsApi do
 
       context 'and the limit parameter is present' do
         before do
-          get "/people/#{@person.id}", { limit: 1 }
+          get "/people/#{@person.id}/merchants", { limit: 1 }
           @json = JSON.parse(last_response.body)
         end
 
