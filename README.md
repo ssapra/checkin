@@ -19,7 +19,7 @@ This service returns a list of merchants in order to check in at a specific merc
 
 By running the seeds file, the application loads 92 Chicago businesses from [City of Chicago Data Portal](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5). In order to identify which merchants are available to check in at, the user can make a GET request to /merchants. By choosing one of the listed merchant ids and also supplying the user's email, the user can check in at a particular merchant by making a POST request to /checkins.
 
-In development, the application also sends request and database statistics to a server running on 127.0.0.1 with port 8125. For other analytics, the user can also make a GET request to /people/:id/merchants to see a list of most visited merchants.
+In development, the application also sends request and database statistics to a server running on 127.0.0.1 with port 8125. For other analytics, the user can also make a GET request to /people/:id/merchants to see a list of most visited merchants. If a merchant wants to view a list of people who checkin frequently, the user can make a GET request to /merchants/:id/people
 
 ### Endpoints
 
@@ -33,6 +33,16 @@ In development, the application also sends request and database statistics to a 
 <td>GET</td>
 <td>/merchants</td>
 <td>Get a list of merchants</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/merchants/:id</td>
+<td>Get a single merchant</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/merchants/:id/people</td>
+<td>Get a merchant's most popular checkins</td>
 </tr>
 <tr>
 <td>POST</td>

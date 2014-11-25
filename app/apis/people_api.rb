@@ -1,6 +1,5 @@
 include Napa::SortableApi
 class PeopleApi < Grape::API
-  desc 'Get a list of people'
   helpers do
     def person
       @person ||= Person.where(id: params[:id])[0]
@@ -11,6 +10,7 @@ class PeopleApi < Grape::API
     end
   end
 
+  desc 'Get a list of people'
   params do
     optional :ids, type: String, desc: 'comma separated person ids'
   end
